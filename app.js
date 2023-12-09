@@ -10,10 +10,9 @@ var bodyParser = require('body-parser');
 var dashboardRouter = require('./routes/dashboard');
 var loginRouter = require('./routes/login');
 var addProductRouter = require('./routes/addProduct');
-var detailProductRouter = require('./routes/detailProduct')
 
 var app = express();
-
+ 
 app.use( session({
   secret: '1233902cat',
   saveUninitialized: true,
@@ -35,8 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', dashboardRouter);
 app.use('/', loginRouter);
-app.use('/', addProductRouter);
-app.use('/', detailProductRouter);
+app.use('/', addProductRouter); 
 
 
 // catch 404 and forward to error handler
